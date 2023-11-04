@@ -28,9 +28,12 @@ mount -t nfs -o ro,nosuid <internal_IP>:/data /data
 ll /data/ #checking the dir content as list
 umount /data
 
-vim /etc/fstab #adding: UUID=1fc4211c-2271-43b7-92f0-3fbdbe1c2f2f /                       xfs     defaults        0 0
-	             #        UUID=DA08-90CB          /boot/efi               vfat    defaults,uid=0,gid=0,umask=0077,shortname=winnt 0 0
-               #        <server_private_IP>:/data /data   nfs defaults        0 0
+vim /etc/fstab 
+
+## adding the following lines: 
+## UUID=1fc4211c-2271-43b7-92f0-3fbdbe1c2f2f /                       xfs     defaults        0 0
+## UUID=DA08-90CB          /boot/efi               vfat    defaults,uid=0,gid=0,umask=0077,shortname=winnt 0 0
+## <server_private_IP>:/data /data   nfs defaults        0 0
 
 mount -a
 df #printing all file system
